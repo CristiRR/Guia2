@@ -11,11 +11,11 @@ function App() {
 
     function inicialCart(){
         const localStorageCart = localStorage.getItem('cart')
-        return localStorageCart? JSON.parse(localStorageCart): []
+        return localStorageCart? JSON.parse(localStorageCart): [];
       }
     
-      const [data, setData] = useState(db)
-      const [cart, setCart] = useState(inicialCart)
+      const [data, setData] = useState(db);
+      const [cart, setCart] = useState(inicialCart);
     
       useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
@@ -61,7 +61,7 @@ function App() {
         .map((item) =>
           item.id === guitarId ? { ...item, quantity: item.quantity - 1 } : item
         )
-        .filter((item) => item.quantity > 0); // Elimina si la cantidad llega a 0
+        .filter((item) => item.quantity > 0); 
     
       setCart(updatedCart);
     }
